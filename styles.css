@@ -1,102 +1,141 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    background: #f4f4f4;
-}
-  
-.container {
-    max-width: 80%; 
-    margin: auto;
-    min-height: initial;
-    position: relative;
-}
-  
-.container > div {
-    padding-bottom: 30px;
-}
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+  }
 
-h3 {
-    cursor: pointer;
-    display: inline;
-}
-
-p {
-    color: #333;
-}
-
-.more:after {
-    content: "\25BC";
-    font-size: 8px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    margin-top: -10px;
-    font-size: 16px;
-    color: #333;
-}
-
-.less:after {
-    content: "\25B2";
-    font-size: 8px;
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    margin-top: -10px;
-    font-size: 16px;
-    color: #333;
-}
-
-ul {
-    list-style-type: none;
+  ul {
     padding-left: 0;
-    border-radius: 5px;
-}
+    display: flex;
+    flex-flow: row wrap;
+  }
 
-li {
-    border: #eaeaea solid 1px;
-    margin: 10px 0;
-    padding: 15px;
-    border-left: #95effe solid 5px;
+  li {
+    list-style-type: none;
+    padding: 10px 10px;
+    transition: all 0.3s ease;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 2em;
+  }
+
+  .card {
+    display: block;
+    width: 150px;
+    height: 175px;
+    padding: 80px 50px;
+    background-color: #51aae5;
+    border-radius: 7px;
+    margin: 5px;
+    text-align: center;
+    line-height: 27px;
+    cursor: pointer;
     position: relative;
-    background: #fff;
-    -webkit-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    -moz-box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-    box-shadow: 0 1px 2px rgba(0,0,0,0.07);
-}
+    color: #fff;
+    font-weight: 600;
+    font-size: 20px;
+    -webkit-box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
+    -moz-box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
+    box-shadow: 9px 10px 22px -8px rgba(209,193,209,.5);
+    will-change: transform;
+  }
 
-li.book {
-    border-left: #eb727e solid 5px;
-}
+  li:hover{
+    transform: scale(1.1);
+  }
 
-li.streaming {
-    border-left: #a0f2d0 solid 5px;
-}
+  li:nth-child(-n+3) .card{
+    background-color: #e65f51;
+    }
 
-.byline {
-    font-size: 14px;
-    font-style: italic;
-}
+  li:nth-child(2n+1) .card{
+    background-color: #a17de9;
+    }
 
-select {
+  li:nth-child(4n) .card{
+    background-color: #feca34;
+    }
+
+  li:nth-child(5n-2) .card{
+    background-color: #51aae5;
+    }
+
+  li:nth-child(4n+4) .card{
+    background-color: #feca34;
+    }
+
+  li:nth-child(-7n+7) .card{
+    background-color: #e46055;
+    }
+
+  .delete-card {
     position: absolute;
     right: 0;
-    top: 5px;
-    -webkit-appearance: button;
-    -webkit-border-radius: 2px;
-    -webkit-box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
-    -webkit-padding-end: 20px;
-    -webkit-padding-start: 2px;
-    -webkit-user-select: none;
-    background-image: url(img/arrow.png), -webkit-linear-gradient(#fff, #fff 40%, #fff);
-    background-position: 97% center;
-    background-repeat: no-repeat;
-    border: 1px solid #eaeaea;
-    color: #555;
-    font-size: inherit;
-    overflow: hidden;
-    padding: 5px 10px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    width: 300px;
+    top: 0;
+    padding: 10px 15px;
+    opacity: .4;
+    transition: all 0.5s ease;
+  }
+
+  .delete-card:hover, .error {
+    opacity: 1;
+    transform: rotate(360deg);
+  }
+
+  .flip-enter-active {
+    transition: all 0.4s ease;
+  }
+
+  .flip-leave-active {
+    display: none;
+  }
+
+  .flip-enter, .flip-leave {
+    transform: rotateY(180deg);
+    opacity: 0;
+
+  }
+
+  /* Form */
+  .flashcard-form{
+    position: relative;
+  }
+
+
+  label{
+    font-weight: 400;
+    color: #333;
+    margin-right: 10px;
+  }
+
+  input{
+    border-radius: 5px;
+    border: 2px solid #eaeaea;
+    padding: 10px;
     outline: none;
-}
-  
+  }
+
+  button{
+    border-radius: 5px;
+    border: 1px solid #87cb84;
+    background-color: #87cb84;
+    padding: 8px 15px;
+    outline: none;
+    font-size: 14px;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  button:hover{
+    background-color: #70a66f;
+  }
+
+  .error{
+    margin-top: 10px;
+    display: block;
+    color: #e44e42;
+    font-weight: 600;
+  }

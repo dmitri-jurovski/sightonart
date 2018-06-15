@@ -9,29 +9,34 @@
   <title>Treehouse Library</title>
 </head>
 <body>
-  <div class="container">
-    <div id="media-list">
-      <h1>{{ title }}</h1>
-      <div i-on:click="search()">AA</div>
-      <select v-on:change="filterList">
-        <option>Select a type of media...</option>
-        <option v-for="item in uniqueItemList">{{ item }}</option>
-      </select>
-       <ul>
-        <li v-show="type === '' || type === media.type"
-            v-for="media in mediaList"
-            v-on:click="toggleDetails(media)"
-            v-bind:class="[media.showDetail ? 'less': 'more', media.type]">
-          <h3>{{media.title}}</h3>
-          <div v-show="media.showDetail">
-            <p>{{media.description}}</p>
-            <p v-if="media.contributor" class="byline">By: {{media.contributor}}</p>
-          </div>
-        </li>
-      </ul>
-    </div>
+
+
+
+<div id="app" class="container">
+
+  <header>
+    <h5>{{ acc.title }}</h5>
+  </header>
+
+  <div>
+    <ul class="flashcard-list">
+      <li>
+        <p class="card">
+
+        </p>
+        <p class="card">
+
+        </p>
+      </li>
+    </ul>
+
+    <h5>{{ media }}</h5>
   </div>
-  
+
+</div><!-- End #app -->
+
+
+<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
   <script src="src/app.js"></script>
 </body>
