@@ -24,7 +24,7 @@ body {
     display: block;
     width: 150px;
     height: 175px;
-    padding: 80px 50px;
+        overflow: hidden;
     background-color: #51aae5;
     border-radius: 7px;
     margin: 5px;

@@ -6,7 +6,7 @@ const insUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_tok
     el: '#app',
     data () {
       return {
-        media: [],
+        media: '',
         acc: {
           title: "Hello"
         }
@@ -20,13 +20,13 @@ const insUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_tok
       })
     },
     methods: {
-      toggleDetails: function(media) {
-        console.log(media.title);
-        media.showDetail = !media.showDetail
-      },
-      filterList: function() {
-        this.type = event.target.value;
-      },
+      // toggleDetails: function(media) {
+      //   console.log(media.title);
+      //   media.showDetail = !media.showDetail
+      // },
+      // filterList: function() {
+      //   this.type = event.target.value;
+      // },
     }, // End methods
 
     computed: {
