@@ -32,8 +32,8 @@
               open: false
           });
 
-          //gulp.watch(options.src + '/scss/**/*.scss', ['styles']);
-          gulp.watch(options.src + '**/*.js').on('change', sync.reload);
+          gulp.watch(options.src + '/scss/**/*.scss', ['styles']);
+          gulp.watch(options.src + '/js/**/*.js').on('change', sync.reload);
           gulp.watch('**/*.html').on('change', sync.reload);
       });
 

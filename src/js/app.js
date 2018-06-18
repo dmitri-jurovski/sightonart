@@ -2,43 +2,51 @@
 
 const token = '7562922180.1677ed0.fc4e273eea1049be86e4a335cb642dbc';
 const insUrl = 'https://api.instagram.com/v1/users/self/media/recent/?access_token=' + token;
- new Vue({
+
+var app = new Vue({
     el: '#app',
     data () {
       return {
         media: '',
         acc: {
-          title: "Hello"
+          title: "Hello",
+          addedd: false,
         }
       }
     },
-    mounted () {
+    mounted: function () {
+      this.$nextTick(function () {
+        // Code that will run only after the
+        // entire view has been rendered
         axios.get(insUrl)
         .then(response => {
-      // JSON responses are automatically parsed.
-      this.media = response.data.data
+          // JSON responses are automatically parsed.
+          this.media = response.data.data;
+
+          this.media.forEach(function (media) {
+            media.addmode = false;
+          });
+        })
       })
     },
+
     methods: {
-      // toggleDetails: function(media) {
-      //   console.log(media.title);
-      //   media.showDetail = !media.showDetail
-      // },
-      // filterList: function() {
-      //   this.type = event.target.value;
-      // },
+      sayHello: function() {
+        alert(this.addmode);
+      },
+      toggleMode: function() {
+        this.addmode = !this.addmode;
+        console.log(this.addmode);
+      }
+
+
     }, // End methods
 
     computed: {
-      uniqueItemList: function() {
-        const types = [];
-        this.mediaList.forEach((item) => {
-          if(!types.includes(item.type)) {
-            types.push(item.type);
-          }
-        });
-        return types;
 
+      uniqueItemList: function() {
+      // Blanc function
+      // ****
       }
     } // End computer
 
