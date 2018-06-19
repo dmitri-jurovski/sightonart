@@ -18,7 +18,7 @@
 
   <header>
 
-    <h5 v-on:click="toggleMode(media)">{{ acc.addedd }} test {{media.addmode}}</h5>
+    <h5 v-on:click="toggleMode()">{{ acc.addedd }} test {{media.addmode}}</h5>
     <!-- <p v-text="card.user.username" ></p> v-on:click="toggleMode(media)"-->
   </header>
 
@@ -28,7 +28,7 @@
 
           v-for="card in media" >
 
-        <p v-if="!card.addmode" class="card">888 => {{ card.addmode }}
+        <p v-if="!card.viewMode" class="card">888 => {{ card.addmode }}
             <img v-bind:src="card.images.low_resolution.url" v-bind:alt="card.caption.text" class="fuild-img" />
         </p>
         <p v-else class="card">999
